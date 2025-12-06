@@ -1,0 +1,39 @@
+/* Smooth fade animation fixes */
+.about-section {
+  position: relative;
+  overflow: hidden;
+  
+}
+.about{
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+/* AOS animation smoother */
+[data-aos] {
+  transition-property: transform, opacity !important;
+}
+
+/* Title style (optional extra glow) */
+.about-title {
+  letter-spacing: 0.5px;
+}
+
+/* About paragraph spacing */
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Mission & Vision grid styling */
+.about-grid {
+  margin-top: 3rem;
+}
+
+/* Simple spacing for mobile */
+@media (max-width: 768px) {
+  .about-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

@@ -1,0 +1,13 @@
+.bincare-title{
+  margin-top: 200px;
+}
+
+/* Force readable colors inside BinCare debug */
+.bincare-debug,
+.bincare-debug * {
+  color: #111 !important;
+  background-color: transparent !important;
+}
+
+/* ensure main content overlays floating icons / navbar */
+.main-content { position: relative; z-index: 1000; }
