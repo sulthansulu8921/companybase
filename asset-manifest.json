@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/companybase/static/css/main.928a8e40.css",
+    "main.js": "/companybase/static/js/main.90faa730.js",
+    "static/js/453.6b5b9f86.chunk.js": "/companybase/static/js/453.6b5b9f86.chunk.js",
+    "index.html": "/companybase/index.html",
+    "main.928a8e40.css.map": "/companybase/static/css/main.928a8e40.css.map",
+    "main.90faa730.js.map": "/companybase/static/js/main.90faa730.js.map",
+    "453.6b5b9f86.chunk.js.map": "/companybase/static/js/453.6b5b9f86.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.928a8e40.css",
+    "static/js/main.90faa730.js"
+  ]
+}
