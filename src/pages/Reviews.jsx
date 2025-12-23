@@ -4,7 +4,7 @@ import "../Reviews.css";
 const Reviews = () => {
   return (
     <section className="reviews-section">
-      <div className="reviews-container" data-aos="fade-up">
+      <div className="reviews-container">
         <h2 className="reviews-heading">
           Share your experience to improve our service quality
         </h2>
@@ -13,7 +13,7 @@ const Reviews = () => {
           className="review-btn"
           onClick={() =>
             window.open(
-              " https://g.page/r/CRez92IdVlKeEBM/review ", 
+              "https://g.page/r/CRez92IdVlKeEBM/review",
               "_blank"
             )
           }
@@ -21,18 +21,22 @@ const Reviews = () => {
           Write a Review
         </button>
 
-        <h3 className="reviews-subheading">Exciting future is ready</h3>
+        <h3 className="reviews-subheading">
+          Exciting future is ready
+        </h3>
 
         <div className="google-card">
           <h4>Google</h4>
           <p>Check us out on Google</p>
+
+          {/* ✅ CRA SAFE IMAGE PATH */}
           <img
-            src="/googlereview.png"
+            src={`${process.env.PUBLIC_URL}/googlereview.png`}
             alt="Google QR"
             className="google-qr"
           />
-          <p className="google-info">
-          Connect Group</p>
+
+          <p className="google-info">Connect Group</p>
         </div>
       </div>
     </section>

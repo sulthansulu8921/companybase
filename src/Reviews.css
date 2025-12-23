@@ -1,92 +1,113 @@
-/* ===== Reviews Page Styles ===== */
+/* ===============================
+   Reviews Section – Full CSS
+   =============================== */
+
 .reviews-section {
   min-height: 100vh;
   background-color: #f3f3f3;
-  color: #f0f0f0;
   padding: 100px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Main Container */
 .reviews-container {
-  max-width: 700px;
-  text-align: center;
-  background: #111;
-  padding: 40px;
+  max-width: 720px;
+  width: 100%;
+  background: #111111;
+  padding: 40px 35px;
   border-radius: 16px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Heading */
 .reviews-heading {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   margin-bottom: 20px;
+  line-height: 1.4;
 }
 
-/* Button */
+/* Review Button */
 .review-btn {
-  background: #fff;
-  color: #000;
+  background-color: #ffffff;
+  color: #000000;
   border: none;
-  padding: 12px 30px;
+  padding: 12px 32px;
   border-radius: 8px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .review-btn:hover {
-  background: #000;
-  color: #fff;
-  border: 1px solid #fff;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
 }
 
-/* Subheading */
+/* Sub Heading */
 .reviews-subheading {
   margin-top: 40px;
-  color: #ccc;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 500;
+  color: #cccccc;
 }
 
 /* Google Card */
 .google-card {
   margin-top: 30px;
-  background: #0b0b0b;
-  border: 1px solid #333;
-  border-radius: 12px;
   padding: 25px;
-  text-align: center;
-
+  background-color: #0b0b0b;
+  border-radius: 14px;
+  border: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Google Title */
 .google-card h4 {
   font-size: 1.2rem;
-  color: #fff;
-}
-.google-card img{
-  width: 500px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
+/* Google Description */
 .google-card p {
-  color: #aaa;
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 0.95rem;
+  color: #aaaaaa;
 }
 
+/* ✅ IMAGE (CRITICAL FIX) */
+.google-card img {
+  width: 100%;
+  max-width: 260px; /* Perfect QR size */
+  height: auto;
+  margin: 18px 0;
+  display: block;
+  border-radius: 10px;
+  background: #ffffff; /* Ensures visibility */
+  padding: 6px;
+}
+
+/* Info Text */
 .google-info {
-  margin-top: 15px;
+  margin-top: 10px;
+  font-size: 0.9rem;
   font-style: italic;
-  color: #bbb;
+  color: #bbbbbb;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
   .reviews-container {
-    padding: 25px;
+    padding: 28px 22px;
   }
 
   .reviews-heading {
@@ -95,5 +116,9 @@
 
   .review-btn {
     width: 100%;
+  }
+
+  .google-card img {
+    max-width: 220px;
   }
 }

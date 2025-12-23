@@ -7,13 +7,12 @@ const Footer = ({ setCurrentPage }) => {
   return (
     <footer className="footer">
       <div className="footer-container">
-
         {/* Company Info */}
         <div className="footer-section">
           <h3 className="footer-title">ConnectGroups</h3>
-          <p className="footer-text">
+          {/* <p className="footer-text">
             Your gateway to premium business solutions and partnerships.
-          </p>
+          </p> */}
         </div>
 
         {/* Quick Links */}
@@ -31,11 +30,13 @@ const Footer = ({ setCurrentPage }) => {
         <div className="footer-section">
           <h4 className="footer-title">Contact Info</h4>
           <ul className="footer-contact">
-
             <li className="footer-line">
               <Phone size={18} /> <span>+91 9895029756</span>
             </li>
 
+            <li className="footer-line">
+              <Phone size={18} /> <span>+91 9946229098</span>
+            </li>
             <li className="footer-line">
               <Mail size={18} /> <span>Connect.ktn@gmail.com</span>
             </li>
@@ -52,7 +53,6 @@ const Footer = ({ setCurrentPage }) => {
                 <span>Kerala 678013</span>
               </div>
             </li>
-
           </ul>
         </div>
 
@@ -60,10 +60,18 @@ const Footer = ({ setCurrentPage }) => {
         <div className="footer-section">
           <h4 className="footer-title">Follow Us</h4>
           <div className="footer-socials">
-            <a href="#"><FaFacebook /></a>
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaLinkedin /></a>
-            <a href="#"><FaInstagram /></a>
+            <a href="#">
+              <FaFacebook />
+            </a>
+            <a href="#">
+              <FaTwitter />
+            </a>
+            <a href="#">
+              <FaLinkedin />
+            </a>
+            <a href="#">
+              <FaInstagram />
+            </a>
           </div>
         </div>
       </div>

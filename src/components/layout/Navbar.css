@@ -17,9 +17,11 @@
 
 /* ✅ Logo (left) */
 .navbar-logo img {
-  width: 400px;
+  width: 300px;
+  height: 100px;
   cursor: pointer;
   /* transition: transform 0.3s ease; */
+  padding: 10px;
 }
 
 .navbar-logo img:hover {
@@ -29,7 +31,7 @@
 .logo {
   mix-blend-mode: multiply;
   width: 300px;      /* container width */
-  height: 120px;     /* container height */
+  height: 100px;     /* container height */
   object-fit: cover; /* crops edges */
   object-position: center; /* crop focus */
 }
@@ -39,12 +41,13 @@
 .navbar-links {
   list-style: none;
   display: flex;
+  justify-items: right;
   gap: 30px;
   margin: 0;
   padding: 0;
   transition: all 0.3s ease;
-  margin-left: 400px;
 }
+
 
 .navbar-links li {
   cursor: pointer;
