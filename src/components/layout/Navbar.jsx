@@ -103,9 +103,9 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       case "bincare":
         return process.env.PUBLIC_URL + "/Binlogo.jpeg";
       case "business":
-        return process.env.PUBLIC_URL + "/business.jpeg";
+        return process.env.PUBLIC_URL + "/vibe.jpeg";
       default:
-        return process.env.PUBLIC_URL + "/Groups.png";
+        return process.env.PUBLIC_URL + "/Groupws.png";
     }
   };
 

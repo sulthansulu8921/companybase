@@ -86,3 +86,17 @@
 .right-icon {
   right: 20px;
 }
+
+.icon-whatsapp {
+  background: #25D366;
+  color: white;
+}
+
+.icon-whatsapp:hover {
+  background: #128C7E;
+}
+
+.call-icon {
+  background: #007BFF;
+  color: white;
+}

@@ -122,7 +122,7 @@ const Home = ({ setCurrentPage }) => {
         href="https://wa.me/919946229098"
         target="_blank"
         rel="noreferrer"
-        className="floating-icon left-icon"
+        className="floating-icon left-icon icon-whatsapp"
         aria-label="WhatsApp"
       >
         <FaWhatsapp size={30} />
@@ -131,7 +131,7 @@ const Home = ({ setCurrentPage }) => {
       {/* Call Icon - Right */}
       <a
         href="tel:+919946229098"
-        className="floating-icon right-icon"
+        className="floating-icon right-icon call-icon"
         aria-label="Call"
       >
         <FaPhoneAlt size={28} />

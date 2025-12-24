@@ -9,7 +9,7 @@ const Footer = ({ setCurrentPage }) => {
       <div className="footer-container">
         {/* Company Info */}
         <div className="footer-section">
-          <h3 className="footer-title">ConnectGroups</h3>
+          <h3 className="footer-title">Connect Groups</h3>
           {/* <p className="footer-text">
             Your gateway to premium business solutions and partnerships.
           </p> */}
@@ -30,12 +30,10 @@ const Footer = ({ setCurrentPage }) => {
         <div className="footer-section">
           <h4 className="footer-title">Contact Info</h4>
           <ul className="footer-contact">
-            <li className="footer-line">
-              <Phone size={18} /> <span>+91 9895029756</span>
-            </li>
+           
 
             <li className="footer-line">
-              <Phone size={18} /> <span>+91 9946229098</span>
+              <Phone size={18} /> <span>+91 9946229098,+91 9895029756</span>
             </li>
             <li className="footer-line">
               <Mail size={18} /> <span>Connect.ktn@gmail.com</span>
@@ -45,11 +43,9 @@ const Footer = ({ setCurrentPage }) => {
             <li className="footer-line address-block">
               <MapPin size={22} className="address-icon" />
               <div className="address-text">
-                <strong>Vibes Solutions</strong>
-                <span>21/648 Second Floor</span>
-                <span>Parangath Tower</span>
-                <span>Kunnathurmedu Post</span>
-                <span>Kalmandapam Palakkad</span>
+                <strong> Business managed By <br/> Vibes Solutions</strong>
+                <span>21/648 Second Floor,Parangath Tower</span>
+                <span>Kunnathurmedu Post,Kalmandapam Palakkad</span>
                 <span>Kerala 678013</span>
               </div>
             </li>
