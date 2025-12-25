@@ -93,17 +93,17 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
   const getLogo = () => {
     switch (pageKey) {
       case "telecom":
-        return process.env.PUBLIC_URL + "/telelogo.jpeg";
+        return process.env.PUBLIC_URL + "/telecom.jpeg";
       case "engineering":
-        return process.env.PUBLIC_URL + "/engilogo.jpeg";
+        return process.env.PUBLIC_URL + "/engineer.jpeg";
       case "suraksha":
         return process.env.PUBLIC_URL + "/surakshalogo.png";
       case "renovations":
-        return process.env.PUBLIC_URL + "/renologo.jpeg";
+        return process.env.PUBLIC_URL + "/home.jpeg";
       case "bincare":
-        return process.env.PUBLIC_URL + "/Binlogo.jpeg";
+        return process.env.PUBLIC_URL + "/Bincare.jpeg";
       case "business":
-        return process.env.PUBLIC_URL + "/vibe.jpeg";
+        return process.env.PUBLIC_URL + "/vibes.jpeg";
       default:
         return process.env.PUBLIC_URL + "/Groupws.png";
     }

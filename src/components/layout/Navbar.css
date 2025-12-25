@@ -18,7 +18,7 @@
 /* ✅ Logo (left) */
 .navbar-logo img {
   width: 340px;
-  /* height: 120px; */
+  height: 90px;
   cursor: pointer;
   /* transition: transform 0.3s ease; */
   padding: 10px;
@@ -30,8 +30,8 @@
 
 .logo {
   mix-blend-mode: multiply;
-  width: 300px;      /* container width */
-  height: 100px;     /* container height */
+  width: 340px;      /* container width */
+  height: 90px;     /* container height */
   object-fit: cover; /* crops edges */
   object-position: center; /* crop focus */
 }
