@@ -101,7 +101,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       case "renovations":
         return process.env.PUBLIC_URL + "/home.jpeg";
       case "bincare":
-        return process.env.PUBLIC_URL + "/Bincare.jpeg";
+        return process.env.PUBLIC_URL + "/bincare.jpeg";
       case "business":
         return process.env.PUBLIC_URL + "/vibes.jpeg";
       default:
