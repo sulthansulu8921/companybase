@@ -9,8 +9,8 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-white text-black py-20 px-6 md:px-20">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="bg-white text-black py-20 px-6 md:px-20 about">
+      <div className="max-w-4xl mx-auto text-center ">
 
         {/* Title */}
         <h1

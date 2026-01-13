@@ -58,13 +58,15 @@
 
 /* Cards */
 .contact-card {
-  background: #111;
+  background: #fffefe;
   border: 1px solid #000000;
   border-radius: 12px;
   padding: 30px 20px;
   transition: all 0.4s ease;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  
 }
+
 
 .contact-card:hover {
   transform: translateY(-8px);
@@ -81,12 +83,12 @@
 .contact-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: #000000;
   margin-bottom: 8px;
 }
 
 .contact-card p {
-  color: #aaa;
+  color: #000000;
   font-size: 0.95rem;
 }
 
@@ -101,8 +103,8 @@
 
 .contact-form input,
 .contact-form textarea {
-  background: #000000;
-  border: 1px solid #333;
+  background: #ffffff;
+  border: 1px solid #000000;
   color: #fff;
   padding: 12px 15px;
   border-radius: 8px;
@@ -113,7 +115,7 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #000000;
+  border-color: #ffffff;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
@@ -126,6 +128,10 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.h3{
+  color: #000000;
 }
 /* 
 .contact-form button:hover {

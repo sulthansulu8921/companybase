@@ -60,20 +60,15 @@ const BinCare = ({ setCurrentPage }) => {
         </p> */}
 
         {/* Back Button */}
-        <button
-          onClick={() => setCurrentPage("home")}
-          style={{
-            padding: "10px 26px",
-            background: "#fff",
-            borderRadius: "30px",
-            border: "1px solid #ddd",
-            cursor: "pointer",
-            fontSize: "1rem",
-            boxShadow: "0 4px 14px rgba(0,0,0,0.1)",
-          }}
-        >
-          ← Back to Home
-        </button>
+       <div className="back-btn-container" data-aos="fade-up">
+  <button
+    className="back-btn"
+    onClick={() => setCurrentPage("production-services")}
+  >
+    ← Back to Product Services
+  </button>
+</div>
+
       </div>
     </section>
   );

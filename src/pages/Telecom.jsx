@@ -29,23 +29,15 @@ const Telecom = ({ setCurrentPage }) => {
 
       {/* Back Button */}
       <div style={{ marginTop: "60px" }}>
-        <button
-          onClick={() => setCurrentPage("connect-groups")}
-          style={{
-            background: "black",
-            color: "whilte",
-            border: "none",
-            padding: "15px 30px",
-            borderRadius: "30px",
-            fontWeight: "bold",
-            // cursor: "pointer",
-            // transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.background = "#ddd")}
-          onMouseLeave={(e) => (e.currentTarget.style.background = "white")}
-        >
-          ← Back to Connect Groups
-        </button>
+       <div className="back-btn-container" data-aos="fade-up">
+  <button
+    className="back-btn"
+    onClick={() => setCurrentPage("production-services")}
+  >
+    ← Back to Product Services
+  </button>
+</div>
+
       </div>
     </div>
   );

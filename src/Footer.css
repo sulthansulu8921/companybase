@@ -2,7 +2,7 @@
    FOOTER MAIN STYLES
 -------------------------------- */
 .footer {
-  background: #242526;
+  background: #232323;
   /* padding-top: 40px; */
   color: white;
   font-family: "Inter", sans-serif;
@@ -16,6 +16,14 @@
   max-width: 1200px;
   margin: auto;
   padding: 40px 20px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 15px;
+  display: block;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 /* ------------------------------

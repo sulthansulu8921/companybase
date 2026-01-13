@@ -2,11 +2,11 @@
 .about-section {
   position: relative;
   overflow: hidden;
-  
 }
 .about{
   font-weight: bold;
-  margin-top: 50px;
+  margin-top: 10px;
+  padding: 20px 30px;
 }
 
 /* AOS animation smoother */

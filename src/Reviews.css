@@ -15,54 +15,50 @@
 .reviews-container {
   max-width: 720px;
   width: 100%;
-  background: #111111;
+
   padding: 40px 35px;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); */
 }
 
 /* Heading */
 .reviews-heading {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
+  font-family: i;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 20px;
-  line-height: 1.4;
+  line-height: 1.1;
+  font-weight: bold;
 }
 
 /* Review Button */
 .review-btn {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000000;
+  color: #ffffff;
   border: none;
   padding: 12px 32px;
   border-radius: 8px;
   font-size: 15px;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+ 
 }
 
-.review-btn:hover {
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-}
 
 /* Sub Heading */
 .reviews-subheading {
   margin-top: 40px;
   font-size: 1.15rem;
   font-weight: 500;
-  color: #cccccc;
+  color: #000000;
 }
 
 /* Google Card */
 .google-card {
   margin-top: 30px;
   padding: 25px;
-  background-color: #0b0b0b;
+  background-color: #f7f3f3;
   border-radius: 14px;
   border: 1px solid #333333;
   display: flex;
@@ -74,14 +70,14 @@
 .google-card h4 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
 }
 
 /* Google Description */
 .google-card p {
   margin-top: 6px;
   font-size: 0.95rem;
-  color: #aaaaaa;
+  color: #000000;
 }
 
 /* ✅ IMAGE (CRITICAL FIX) */

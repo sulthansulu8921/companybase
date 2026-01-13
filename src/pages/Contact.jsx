@@ -57,7 +57,7 @@ Message: ${formData.message}`;
           <div className="contact-card">
             <Phone className="contact-icon" />
             <h3>Phone</h3>
-            <p>+91 9946229098</p>
+            <p>+91 9946229098,+91 9895029756</p>
           </div>
 
           <div className="contact-card">
@@ -99,7 +99,7 @@ Message: ${formData.message}`;
 
           <textarea
             name="message"
-            placeholder="Your Message"
+            placeholder="Your Requirement"
             rows="5"
             required
             onChange={handleChange}

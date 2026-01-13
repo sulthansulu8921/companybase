@@ -6,6 +6,7 @@ const Reviews = () => {
     <section className="reviews-section">
       <div className="reviews-container">
         <h2 className="reviews-heading">
+
           Share your experience to improve our service quality
         </h2>
 
@@ -25,19 +26,14 @@ const Reviews = () => {
           Exciting future is ready
         </h3>
 
-        <div className="google-card">
-          <h4>Google</h4>
-          <p>Check us out on Google</p>
-
-          {/* ✅ CRA SAFE IMAGE PATH */}
-          <img
-            src={`${process.env.PUBLIC_URL}/googlereview.png`}
+         <img
+            src={`${process.env.PUBLIC_URL}/googlereview..jpeg`}
             alt="Google QR"
             className="google-qr"
           />
 
-          <p className="google-info">Connect Group</p>
-        </div>
+
+        
       </div>
     </section>
   );
