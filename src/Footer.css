@@ -2,10 +2,11 @@
    FOOTER MAIN STYLES
 -------------------------------- */
 .footer {
-  background: #232323;
+  background: #ffffff;
   /* padding-top: 40px; */
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: "Inter", sans-serif;
+  border-top: #000000 1px solid;
 }
 
 /* GRID LAYOUT — 3 COLUMNS */
@@ -52,7 +53,7 @@
 }
 
 .footer-links li:hover {
-  color: #f4b4b4;
+  color: #000000;
 }
 
 /* ------------------------------
@@ -98,13 +99,13 @@
 }
 
 .footer-socials a {
-  color: white;
+  color: rgb(14, 14, 14);
   font-size: 18px;
   transition: 0.3s ease;
 }
 
 .footer-socials a:hover {
-  color: #f4b4b4;
+  color: #020202;
 }
 
 /* ------------------------------

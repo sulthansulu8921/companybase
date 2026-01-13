@@ -62,7 +62,7 @@ const BinCare = ({ setCurrentPage }) => {
         {/* Back Button */}
        <div className="back-btn-container" data-aos="fade-up">
   <button
-    className="back-btn"
+    className="exit-btn"
     onClick={() => setCurrentPage("production-services")}
   >
     ← Back to Product Services

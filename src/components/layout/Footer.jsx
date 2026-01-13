@@ -15,9 +15,9 @@ const Footer = ({ setCurrentPage }) => {
             alt="Connect Groups Logo"
             className="footer-logo"
           />
-          {/* <p className="footer-text">
-            Your gateway to premium business solutions and partnerships.
-          </p> */}
+          <p className="footer-text">
+            Perfection | Trust | Quality 
+          </p>
         </div>
 
         {/* Quick Links */}
@@ -37,7 +37,7 @@ const Footer = ({ setCurrentPage }) => {
           <h4 className="footer-title">Contact Info</h4>
           <ul className="footer-contact">
             <li className="footer-line">
-              <Phone size={18} /> <span>+91 9946229098,+91 9895029756</span>
+              <Phone size={18} /> <span>+91 99462 29098,+91 98950 29756</span>
             </li>
             <li className="footer-line">
               <Mail size={18} /> <span>Connect.ktn@gmail.com</span>

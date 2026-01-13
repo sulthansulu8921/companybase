@@ -17,8 +17,8 @@
 
 /* ✅ Logo (left) */
 .navbar-logo img {
-  width: 340px;
-  height: 90px;
+  width: 300px;
+  height: 80px;
   cursor: pointer;
   padding: 10px;
 }
