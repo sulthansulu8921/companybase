@@ -20,14 +20,14 @@ const Suraksha = ({ setCurrentPage }) => {
 
       {/* Back Button */}
       <div style={{ marginTop: "60px" }}>
-       <div className="back-btn-container" data-aos="fade-up">
-  <button
-    className="back-btn"
-    onClick={() => setCurrentPage("production-services")}
-  >
-    ← Back to Product Services
-  </button>
-</div>
+        <div className="back-btn-container" data-aos="fade-up">
+          <button
+            className="back-btn"
+            onClick={() => setCurrentPage("home")}
+          >
+            ← Back to Product Services
+          </button>
+        </div>
 
       </div>
     </section>

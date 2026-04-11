@@ -17,7 +17,7 @@ const BinCare = ({ setCurrentPage }) => {
           // background: "white",
           padding: "40px",
           borderRadius: "18px",
-        
+
           textAlign: "center",
         }}
       >
@@ -39,8 +39,8 @@ const BinCare = ({ setCurrentPage }) => {
             marginBottom: "18px",
             lineHeight: "1.7",
           }}
-        > 
-        COMING SOON...
+        >
+          COMING SOON...
         </p>
 
         {/* <p
@@ -60,14 +60,14 @@ const BinCare = ({ setCurrentPage }) => {
         </p> */}
 
         {/* Back Button */}
-       <div className="back-btn-container" data-aos="fade-up">
-  <button
-    className="exit-btn"
-    onClick={() => setCurrentPage("production-services")}
-  >
-    ← Back to Product Services
-  </button>
-</div>
+        <div className="back-btn-container" data-aos="fade-up" style={{ marginTop: "40px" }}>
+          <button
+            className="back-btn"
+            onClick={() => setCurrentPage("home")}
+          >
+            ← Back to Product Services
+          </button>
+        </div>
 
       </div>
     </section>

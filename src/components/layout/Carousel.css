@@ -2,15 +2,15 @@
   width: 100%;
   height: 400px;
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .carousel-slide {
   position: absolute;
   inset: 0;
-  /* background-size: cover; */
-  background-size: contain;
+  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }

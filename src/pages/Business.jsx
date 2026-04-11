@@ -19,14 +19,14 @@ const Business = ({ setCurrentPage }) => (
 
       {/* Exit / Back Button */}
       <div style={{ marginTop: "50px" }}>
-       <div className="back-btn-container" data-aos="fade-up">
-  <button
-    className="back-btn"
-    onClick={() => setCurrentPage("production-services")}
-  >
-    ← Back to Product Services
-  </button>
-</div>
+        <div className="back-btn-container" data-aos="fade-up">
+          <button
+            className="back-btn"
+            onClick={() => setCurrentPage("home")}
+          >
+            ← Back to Product Services
+          </button>
+        </div>
 
       </div>
     </div>

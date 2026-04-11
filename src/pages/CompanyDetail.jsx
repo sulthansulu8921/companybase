@@ -49,13 +49,13 @@ const CompanyDetail = ({ setCurrentPage, company }) => {
             </p>
           </div>
           <div className="back-btn-container" data-aos="fade-up">
-  <button
-    className="back-btn"
-    onClick={() => setCurrentPage("production-services")}
-  >
-    ← Back to Product Services
-  </button>
-</div>
+            <button
+              className="back-btn"
+              onClick={() => setCurrentPage("home")}
+            >
+              ← Back to Product Services
+            </button>
+          </div>
 
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Navbar.css";
 
 const projects = [
@@ -12,63 +12,131 @@ const projects = [
 
 const Navbar = ({ currentPage, setCurrentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const handleNavClick = (page) => {
     setCurrentPage(page);
     setIsMenuOpen(false);
+    setIsDropdownOpen(false);
+  };
+
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setIsDropdownOpen((prev) => !prev);
   };
 
   const getLogo = () => {
     switch ((currentPage || "").toLowerCase()) {
-      case "telecom":
-        return process.env.PUBLIC_URL + "/telecom.jpeg";
-      case "business":
-        return process.env.PUBLIC_URL + "/vibes.jpeg";
-      case "engineering":
-        return process.env.PUBLIC_URL + "/engineer.jpeg";
-      case "suraksha":
-        return process.env.PUBLIC_URL + "/groups.jpeg";
-      case "bincare":
-        return process.env.PUBLIC_URL + "/bincare.jpeg";
-      case "renovations":
-        return process.env.PUBLIC_URL + "/home.jpeg";
-      default:
-        return process.env.PUBLIC_URL + "/Groups.png";
+      case "telecom": return process.env.PUBLIC_URL + "/telecom.jpeg";
+      case "business": return process.env.PUBLIC_URL + "/vibes.jpeg";
+      case "engineering": return process.env.PUBLIC_URL + "/engineer.jpeg";
+      case "suraksha": return process.env.PUBLIC_URL + "/groups.jpeg";
+      case "bincare": return process.env.PUBLIC_URL + "/bincare.jpeg";
+      case "renovations": return process.env.PUBLIC_URL + "/home.jpeg";
+      default: return process.env.PUBLIC_URL + "/Groups.png";
     }
   };
 
   return (
-    <nav className="navbar">
+    <header className={`navbar${scrolled ? " navbar--scrolled" : ""}`}>
       <div className="navbar-container">
-        <div className="navbar-logo" onClick={() => handleNavClick("home")}>
-          <img src={getLogo()} alt="Logo" className="logo" />
+
+        {/* Logo — extreme left */}
+        <div className="navbar-logo" onClick={() => handleNavClick("home")} role="button" aria-label="Go to home">
+          <img src={getLogo()} alt="Connect Group Logo" className="logo-img" />
         </div>
+
+        {/* Desktop Navigation — extreme right */}
+        <nav className="nav-menu" aria-label="Main navigation">
+          <ul className="navbar-links">
+            <li className={currentPage === "home" ? "active" : ""} onClick={() => handleNavClick("home")}>Home</li>
+            <li className={currentPage === "about" ? "active" : ""} onClick={() => handleNavClick("about")}>About</li>
+
+            {/* Projects with dropdown */}
+            <li
+              className={`dropdown-parent${isDropdownOpen ? " mobile-open" : ""}${projects.some(p => p.page === currentPage) ? " active" : ""}`}
+              ref={dropdownRef}
+              onClick={toggleDropdown}
+              onMouseEnter={() => window.innerWidth > 768 && setIsDropdownOpen(true)}
+              onMouseLeave={() => window.innerWidth > 768 && setIsDropdownOpen(false)}
+            >
+              <span className="dropdown-toggle">Projects</span>
+              <ul className={`dropdown-menu${isDropdownOpen ? " show" : ""}`} onClick={(e) => e.stopPropagation()}>
+                {projects.map((p) => (
+                  <li
+                    key={p.page}
+                    className={currentPage === p.page ? "active-sub" : ""}
+                    onClick={() => handleNavClick(p.page)}
+                  >
+                    {p.label}
+                  </li>
+                ))}
+              </ul>
+            </li>
+
+            <li className={currentPage === "reviews" ? "active" : ""} onClick={() => handleNavClick("reviews")}>Reviews</li>
+            <li className={`nav-contact-btn${currentPage === "contact" ? " active" : ""}`} onClick={() => handleNavClick("contact")}>Contact</li>
+          </ul>
+        </nav>
+
+        {/* Hamburger — mobile only */}
+        <button
+          className={`menu-toggle${isMenuOpen ? " open" : ""}`}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
       </div>
 
-      <div className="nav-menu">
-        <ul className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
-          <li onClick={() => handleNavClick("home")}>Home</li>
-          <li onClick={() => handleNavClick("about")}>About</li>
+      {/* Mobile Drawer */}
+      <div className={`mobile-drawer${isMenuOpen ? " open" : ""}`} aria-hidden={!isMenuOpen}>
+        <ul className="mobile-links">
+          <li onClick={() => handleNavClick("home")} className={currentPage === "home" ? "active" : ""}>Home</li>
+          <li onClick={() => handleNavClick("about")} className={currentPage === "about" ? "active" : ""}>About</li>
 
-          {/* Projects — hover dropdown */}
-          <li className="dropdown-parent">
-            <span className="dropdown-toggle">
-              Projects <span className="dropdown-arrow">▼</span>
-            </span>
-            <ul className="dropdown-menu">
-              {projects.map((p) => (
-                <li key={p.page} onClick={() => handleNavClick(p.page)}>
-                  {p.label}
-                </li>
-              ))}
-            </ul>
+          {/* Mobile Projects Accordion */}
+          <li className={`mobile-dropdown${isDropdownOpen ? " open" : ""}`}>
+            <div className="mobile-dropdown-header" onClick={toggleDropdown}>
+              Projects <span className="mobile-arrow">&#8964;</span>
+            </div>
+            {isDropdownOpen && (
+              <ul className="mobile-dropdown-list">
+                {projects.map((p) => (
+                  <li key={p.page} onClick={() => handleNavClick(p.page)} className={currentPage === p.page ? "active-sub" : ""}>
+                    {p.label}
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
 
-          <li onClick={() => handleNavClick("reviews")}>Reviews</li>
-          <li onClick={() => handleNavClick("contact")}>Contact</li>
+          <li onClick={() => handleNavClick("reviews")} className={currentPage === "reviews" ? "active" : ""}>Reviews</li>
+          <li onClick={() => handleNavClick("contact")} className={`contact-mobile${currentPage === "contact" ? " active" : ""}`}>Contact</li>
         </ul>
       </div>
-    </nav>
+    </header>
   );
 };
 

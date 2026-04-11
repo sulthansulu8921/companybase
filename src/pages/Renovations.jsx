@@ -13,21 +13,21 @@ const Renovations = ({ setCurrentPage }) => {
       <div className="content" data-aos="fade-up">
         <h1 className="title">CONNECT HOME RENOVATIONS</h1>
         <p className="subtitle">
-         COMING SOON...
+          COMING SOON...
         </p>
       </div>
 
 
       {/* ✅ Back Button */}
       <div className="back-btn-container" data-aos="fade-up">
-      <div className="back-btn-container" data-aos="fade-up">
-  <button
-    className="back-btn"
-    onClick={() => setCurrentPage("production-services")}
-  >
-    ← Back to Product Services
-  </button>
-</div>
+        <div className="back-btn-container" data-aos="fade-up">
+          <button
+            className="back-btn"
+            onClick={() => setCurrentPage("home")}
+          >
+            ← Back to Product Services
+          </button>
+        </div>
 
       </div>
     </section>

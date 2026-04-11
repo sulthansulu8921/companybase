@@ -21,7 +21,7 @@ const Engineering = ({ setCurrentPage }) => {
           letterSpacing: "1px",
         }}
       >
-         Connect Engineering
+        Connect Engineering
       </h1>
 
       <p
@@ -34,7 +34,7 @@ const Engineering = ({ setCurrentPage }) => {
       >
         COMING SOON...
       </p>
-{/* 
+      {/* 
       <img
         src="https://source.unsplash.com/800x400/?engineering,construction"
         alt="Engineering"
@@ -50,14 +50,14 @@ const Engineering = ({ setCurrentPage }) => {
       /> */}
 
       <div style={{ marginTop: "50px" }}>
-       <div className="back-btn-container" data-aos="fade-up">
-  <button
-    className="back-btn"
-    onClick={() => setCurrentPage("production-services")}
-  >
-    ← Back to Product Services
-  </button>
-</div>
+        <div className="back-btn-container" data-aos="fade-up">
+          <button
+            className="back-btn"
+            onClick={() => setCurrentPage("home")}
+          >
+            ← Back to Product Services
+          </button>
+        </div>
 
       </div>
     </div>

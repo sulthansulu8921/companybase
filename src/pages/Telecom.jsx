@@ -5,7 +5,7 @@ const Telecom = ({ setCurrentPage }) => {
     <div
       className="telecom-page"
       style={{
-        background:"whilte",
+        background: "whilte",
         color: "black",
         minHeight: "100vh",
         padding: "80px 20px",
@@ -29,14 +29,14 @@ const Telecom = ({ setCurrentPage }) => {
 
       {/* Back Button */}
       <div style={{ marginTop: "60px" }}>
-       <div className="back-btn-container" data-aos="fade-up">
-  <button
-    className="back-btn"
-    onClick={() => setCurrentPage("production-services")}
-  >
-    ← Back to Product Services
-  </button>
-</div>
+        <div className="back-btn-container" data-aos="fade-up">
+          <button
+            className="back-btn"
+            onClick={() => setCurrentPage("home")}
+          >
+            ← Back to Product Services
+          </button>
+        </div>
 
       </div>
     </div>
