@@ -18,6 +18,7 @@ const Footer = ({ setCurrentPage }) => {
           <p className="footer-text">
             Perfection | Trust | Quality 
           </p>
+          
         </div>
 
         {/* Quick Links */}
