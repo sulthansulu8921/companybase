@@ -127,6 +127,8 @@
   .footer-container {
     grid-template-columns: 1fr;
     text-align: left;
+    gap: 24px;
+    padding: 30px 20px;
   }
 
   .footer-contact li {
@@ -135,5 +137,31 @@
 
   .footer-socials {
     margin-top: 10px;
+  }
+
+  .footer-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    width: 120px;
+  }
+
+  .footer-text,
+  .footer-links li,
+  .footer-contact li {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    padding: 10px 16px;
   }
 }

@@ -3,7 +3,8 @@
   position: relative;
   overflow: hidden;
 }
-.about{
+
+.about {
   font-weight: bold;
   margin-top: 10px;
   padding: 20px 30px;
@@ -35,5 +36,23 @@
   .about-section {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .about {
+    padding: 16px 20px;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 12px 16px;
+  }
+
+  .about-grid {
+    margin-top: 1.5rem;
   }
 }

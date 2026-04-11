@@ -1,5 +1,5 @@
 .connect-container {
-  background: linear-gradient(to bottom, #fffdfd,#ffff, #d4a6a6);
+  background: linear-gradient(to bottom, #fffdfd, #ffff, #d4a6a6);
   color: rgb(0, 0, 0);
   min-height: 100vh;
   padding: 80px 20px;
@@ -68,7 +68,7 @@
   color: black;
   padding: 12px;
   border-radius: 50%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: 0.3s ease;
   z-index: 9999;
@@ -99,4 +99,35 @@
 .call-icon {
   background: #007BFF;
   color: white;
+}
+
+/* ─── Mobile Responsive ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .connect-container {
+    padding: 50px 16px;
+    align-items: flex-start;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .connect-card {
+    padding: 22px 18px;
+  }
+
+  .connect-card h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .connect-card h2 {
+    font-size: 0.95rem;
+  }
+
+  .company-logo {
+    width: 110px;
+  }
 }

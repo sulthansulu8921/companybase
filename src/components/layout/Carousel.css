@@ -21,6 +21,12 @@
 
 @media (max-width: 768px) {
   .carousel-container {
-    height: 260px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 180px;
   }
 }
