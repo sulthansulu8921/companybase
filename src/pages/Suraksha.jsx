@@ -1,36 +1,16 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import "../Suraksha.css";
+import React from "react";
+import ComingSoonPage from "../components/layout/ComingSoonPage";
+import surakshaBg from "../assets/images/suraksha-bg.png";
 
 const Suraksha = ({ setCurrentPage }) => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
   return (
-    <section className="suraksha-container text-center">
-      <div className="content" data-aos="fade-up">
-        <h1 className="title">SUREKSHA DOORS & WINDOWS</h1>
-        <p className="subtitle">
-          Premium-quality security doors and modern window systems — crafted for
-          durability, safety, and style.
-        </p>
-      </div>
-
-      {/* Back Button */}
-      <div style={{ marginTop: "60px" }}>
-        <div className="back-btn-container" data-aos="fade-up">
-          <button
-            className="back-btn"
-            onClick={() => setCurrentPage("home")}
-          >
-            ← Back to Product Services
-          </button>
-        </div>
-
-      </div>
-    </section>
+    <ComingSoonPage
+      title="Suraksha Doors and Windows"
+      bgImage={surakshaBg}
+      pdfFile="/suraksha-brochure.pdf"
+      pdfName="Suraksha_Doors_Brochure.pdf"
+      setCurrentPage={setCurrentPage}
+    />
   );
 };
 

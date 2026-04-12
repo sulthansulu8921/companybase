@@ -1,45 +1,16 @@
 import React from "react";
+import ComingSoonPage from "../components/layout/ComingSoonPage";
+import telecomBg from "../assets/images/telecom-bg.png";
 
 const Telecom = ({ setCurrentPage }) => {
   return (
-    <div
-      className="telecom-page"
-      style={{
-        background: "whilte",
-        color: "black",
-        minHeight: "100vh",
-        padding: "80px 20px",
-        textAlign: "center",
-        animation: "fadeIn 1s ease-in-out",
-      }}
-    >
-      {/* Title */}
-      <h1
-        style={{
-          fontSize: "3rem",
-          marginBottom: "20px",
-          fontWeight: "bold",
-          letterSpacing: "1px",
-        }}
-      >
-        Connect Telecom
-      </h1>
-
-      <h1>Coming Soon...</h1>
-
-      {/* Back Button */}
-      <div style={{ marginTop: "60px" }}>
-        <div className="back-btn-container" data-aos="fade-up">
-          <button
-            className="back-btn"
-            onClick={() => setCurrentPage("home")}
-          >
-            ← Back to Product Services
-          </button>
-        </div>
-
-      </div>
-    </div>
+    <ComingSoonPage
+      title="Connect Integrated Telecom Services"
+      bgImage={telecomBg}
+      pdfFile="/telecom-brochure.pdf"
+      pdfName="Connect_Telecom_Brochure.pdf"
+      setCurrentPage={setCurrentPage}
+    />
   );
 };
 
