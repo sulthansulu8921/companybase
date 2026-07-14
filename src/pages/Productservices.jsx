@@ -3,7 +3,6 @@ import React from "react";
 import {
   FaWifi,
   FaCogs,
-  FaRecycle,
   FaBriefcase,
   FaDoorOpen,
   FaHome,
@@ -38,12 +37,6 @@ const ProductServices = ({ setCurrentPage }) => {
       desc: "Premium, secure, and aesthetic home protection systems.",
       icon: <FaDoorOpen />,
       page: "suraksha",
-    },
-    {
-      title: "Connect Bin Care Solutions",
-      desc: "Smart and sustainable waste management.",
-      icon: <FaRecycle />,
-      page: "bincare",
     },
     {
       title: "Connect Home Renovations",

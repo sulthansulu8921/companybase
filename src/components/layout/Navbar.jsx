@@ -6,7 +6,6 @@ const projects = [
   { label: "Vibes Business Solution", page: "business" },
   { label: "Connect Engineering and Infrastructure", page: "engineering" },
   { label: "Suraksha Doors and Windows", page: "suraksha" },
-  { label: "Connect Bin Care Solutions", page: "bincare" },
   { label: "Connect Home Renovations", page: "renovations" },
 ];
 
@@ -49,7 +48,6 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       case "business": return process.env.PUBLIC_URL + "/vibes.jpeg";
       case "engineering": return process.env.PUBLIC_URL + "/engineer.jpeg";
       case "suraksha": return process.env.PUBLIC_URL + "/groups.jpeg";
-      case "bincare": return process.env.PUBLIC_URL + "/bincare.jpeg";
       case "renovations": return process.env.PUBLIC_URL + "/home.jpeg";
       default: return process.env.PUBLIC_URL + "/Groups.png";
     }

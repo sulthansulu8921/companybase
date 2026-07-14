@@ -25,11 +25,6 @@ const ConnectGroups = ({ setCurrentPage }) => {
         <p>Premium, secure, and aesthetic home protection systems.</p>
       </div>
 
-      <div className="company-card" onClick={() => setCurrentPage("bincare")}>
-        <h3>CONNECT BIN CARE SOLUTIONS</h3>
-        <p>Smart and sustainable waste management.</p>
-      </div>
-
       <div className="company-card" onClick={() => setCurrentPage("renovations")}>
         <h3>CONNECT HOME RENOVATIONS</h3>
         <p>Transforming living spaces with modern design.</p>

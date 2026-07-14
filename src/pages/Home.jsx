@@ -20,7 +20,6 @@
 //     { title: "Vibes Business solution", desc: "Comprehensive business growth strategies.", icon: <FaBriefcase />, page: "business" },
 //     { title: "Connect Engineering and Infrastructure", desc: "Building innovation with precision and excellence.", icon: <FaCogs />, page: "engineering" },
 //     { title: "Suraksha Doors and Windows", desc: "Premium, secure, and aesthetic home protection systems.", icon: <FaDoorOpen />, page: "suraksha" },
-//     { title: "Connect Bin Care Solutions", desc: "Smart and sustainable waste management.", icon: <FaRecycle />, page: "bincare" },
 //     { title: "Connect Home Renovations", desc: "Transforming living spaces with modern design.", icon: <FaHome />, page: "renovations" },
 //   ];
 
@@ -97,7 +96,6 @@
 //     { title: "Vibes Business Solution", icon: <FaBriefcase />, page: "business" },
 //     { title: "Connect Engineering and Infrastructure", icon: <FaCogs />, page: "engineering" },
 //     { title: "Suraksha Doors and Windows", icon: <FaDoorOpen />, page: "suraksha" },
-//     { title: "Connect Bin Care Solutions", icon: <FaRecycle />, page: "bincare" },
 //     { title: "Connect Home Renovations", icon: <FaHome />, page: "renovations" },
 //   ];
 

@@ -13,7 +13,6 @@
 // import Suraksha from "./pages/Suraksha";
 // import Renovations from "./pages/Renovations";
 // import Reviews from "./pages/Reviews";
-// import BinCare from "./pages/BinCare";
 // import Business from "./pages/Business";
 
 // import "./index.css";
@@ -35,7 +34,6 @@
 //       case "telecom": return <Telecom setCurrentPage={setCurrentPage} />;
 //       case "engineering": return <Engineering setCurrentPage={setCurrentPage} />;
 //       case "suraksha": return <Suraksha setCurrentPage={setCurrentPage} />;
-//       case "bincare": return <BinCare setCurrentPage={setCurrentPage} />;
 //       case "renovations": return <Renovations setCurrentPage={setCurrentPage} />;
 //       case "business": return <Business setCurrentPage={setCurrentPage} />;
 //       case "company-detail": return <CompanyDetail setCurrentPage={setCurrentPage} />;
@@ -86,7 +84,6 @@ import Telecom from "./pages/Telecom";
 import Engineering from "./pages/Engineering";
 import Suraksha from "./pages/Suraksha";
 import Renovations from "./pages/Renovations";
-import BinCare from "./pages/BinCare";
 import Business from "./pages/Business";
 
 import "./index.css";
@@ -110,9 +107,6 @@ const App = () => {
 
       case "suraksha":
         return <Suraksha setCurrentPage={setCurrentPage} />;
-
-      case "bincare":
-        return <BinCare setCurrentPage={setCurrentPage} />;
 
       case "renovations":
         return <Renovations setCurrentPage={setCurrentPage} />;
