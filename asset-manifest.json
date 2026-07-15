@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e8be77cc.css",
-    "main.js": "/static/js/main.77c87a82.js",
-    "static/js/453.6b5b9f86.chunk.js": "/static/js/453.6b5b9f86.chunk.js",
-    "static/media/telecom-bg.png": "/static/media/telecom-bg.05c89f254f7c861334ca.png",
-    "static/media/suraksha-bg.png": "/static/media/suraksha-bg.8e8b36e53950fdb8dbc4.png",
-    "static/media/engineering-bg.png": "/static/media/engineering-bg.26e19dec48003450830f.png",
-    "static/media/renovation-bg.png": "/static/media/renovation-bg.bb6b85227a2840c810a6.png",
-    "static/media/business-bg.png": "/static/media/business-bg.952aaec94a7675063c8b.png",
-    "index.html": "/index.html",
-    "main.e8be77cc.css.map": "/static/css/main.e8be77cc.css.map",
-    "main.77c87a82.js.map": "/static/js/main.77c87a82.js.map",
-    "453.6b5b9f86.chunk.js.map": "/static/js/453.6b5b9f86.chunk.js.map"
+    "main.css": "./static/css/main.e8be77cc.css",
+    "main.js": "./static/js/main.42b5ee56.js",
+    "static/js/453.6b5b9f86.chunk.js": "./static/js/453.6b5b9f86.chunk.js",
+    "static/media/telecom-bg.png": "./static/media/telecom-bg.05c89f254f7c861334ca.png",
+    "static/media/suraksha-bg.png": "./static/media/suraksha-bg.8e8b36e53950fdb8dbc4.png",
+    "static/media/engineering-bg.png": "./static/media/engineering-bg.26e19dec48003450830f.png",
+    "static/media/renovation-bg.png": "./static/media/renovation-bg.bb6b85227a2840c810a6.png",
+    "static/media/business-bg.png": "./static/media/business-bg.952aaec94a7675063c8b.png",
+    "index.html": "./index.html",
+    "main.e8be77cc.css.map": "./static/css/main.e8be77cc.css.map",
+    "main.42b5ee56.js.map": "./static/js/main.42b5ee56.js.map",
+    "453.6b5b9f86.chunk.js.map": "./static/js/453.6b5b9f86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e8be77cc.css",
-    "static/js/main.77c87a82.js"
+    "static/js/main.42b5ee56.js"
   ]
 }
