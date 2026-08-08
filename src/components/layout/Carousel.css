@@ -21,12 +21,14 @@
 
 @media (max-width: 768px) {
   .carousel-container {
-    height: 80vh;
+    height: 55vh;
+    min-height: 280px;
   }
 }
 
 @media (max-width: 480px) {
   .carousel-container {
-    height: 100vh;
+    height: 42vh;
+    min-height: 230px;
   }
 }

@@ -130,4 +130,22 @@
   .company-logo {
     width: 110px;
   }
+
+  .floating-icon {
+    bottom: 16px;
+    padding: 10px;
+  }
+
+  .floating-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .left-icon {
+    left: 14px;
+  }
+
+  .right-icon {
+    right: 14px;
+  }
 }
