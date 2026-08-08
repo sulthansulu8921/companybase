@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 
 const images = [
-  process.env.PUBLIC_URL + "/carusal-img-3.png",
-  process.env.PUBLIC_URL + "/carusal-img-2.png",
   process.env.PUBLIC_URL + "/carusal-img-1.jpeg",
+  process.env.PUBLIC_URL + "/carusal-img-2.png",
+  process.env.PUBLIC_URL + "/carusal-img-3.png",
   process.env.PUBLIC_URL + "/carusal-img-4.png",
   process.env.PUBLIC_URL + "/carusal-img-5.jpeg",
 ];
