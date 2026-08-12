@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.2ffddc29.css",
-    "main.js": "./static/js/main.9293ed95.js",
+    "main.css": "./static/css/main.ec96344f.css",
+    "main.js": "./static/js/main.1d00bb9c.js",
     "static/js/453.6b5b9f86.chunk.js": "./static/js/453.6b5b9f86.chunk.js",
     "static/media/telecom-bg.png": "./static/media/telecom-bg.05c89f254f7c861334ca.png",
     "static/media/suraksha-bg.png": "./static/media/suraksha-bg.8e8b36e53950fdb8dbc4.png",
@@ -9,12 +9,12 @@
     "static/media/renovation-bg.png": "./static/media/renovation-bg.bb6b85227a2840c810a6.png",
     "static/media/business-bg.png": "./static/media/business-bg.952aaec94a7675063c8b.png",
     "index.html": "./index.html",
-    "main.2ffddc29.css.map": "./static/css/main.2ffddc29.css.map",
-    "main.9293ed95.js.map": "./static/js/main.9293ed95.js.map",
+    "main.ec96344f.css.map": "./static/css/main.ec96344f.css.map",
+    "main.1d00bb9c.js.map": "./static/js/main.1d00bb9c.js.map",
     "453.6b5b9f86.chunk.js.map": "./static/js/453.6b5b9f86.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ffddc29.css",
-    "static/js/main.9293ed95.js"
+    "static/css/main.ec96344f.css",
+    "static/js/main.1d00bb9c.js"
   ]
 }
