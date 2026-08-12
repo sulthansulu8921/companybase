@@ -63,7 +63,7 @@ const Footer = ({ setCurrentPage }) => {
                 <strong>
                   Managed By <br /> Vibes Solutions
                 </strong>
-                <span>21/648 Second Floor, Parangath Tower</span>
+                <span>Second Floor, Parangath Tower</span>
                 <span>Kunnathurmedu Post, Kalmandapam</span>
                 <span>Palakkad, Kerala 678013</span>
               </div>

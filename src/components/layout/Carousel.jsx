@@ -67,7 +67,7 @@ const Carousel = () => {
           onClick={prevSlide}
           aria-label="Previous Slide"
         >
-          <ChevronLeft size={22} />
+          <ChevronLeft size={36} strokeWidth={2.5} />
         </button>
 
         {/* Big Main Image (Left) + Small Preview Image (Right) */}
@@ -103,7 +103,7 @@ const Carousel = () => {
           onClick={nextSlide}
           aria-label="Next Slide"
         >
-          <ChevronRight size={22} />
+          <ChevronRight size={36} strokeWidth={2.5} />
         </button>
       </div>
 
