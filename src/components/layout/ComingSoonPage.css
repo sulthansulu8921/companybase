@@ -1,119 +1,115 @@
 /* src/components/layout/ComingSoonPage.css */
 
-.coming-soon-wrapper {
+.coming-soon-page-container {
     width: 100%;
-    min-height: 70vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #0b0f19;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
     position: relative;
-    padding: 24px 20px 40px;
-    align-items: center;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
-.coming-soon-header {
+/* Full Hero Section with Background Image */
+.coming-soon-hero {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 16px;
+    min-height: 520px;
+    height: 70vh;
+    max-height: 600px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
-.btn-back-minimal {
+/* Floating Back Button */
+.btn-back-hero {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    padding: 8px 18px;
-    font-size: 0.92rem;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 20px;
+    font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
     border-radius: 50px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.btn-back-minimal:hover {
-    background: rgba(255, 255, 255, 0.25);
+.btn-back-hero:hover {
+    background: rgba(255, 255, 255, 0.35);
     transform: translateX(-4px);
-    border-color: rgba(255, 255, 255, 0.5);
+    border-color: #ffffff;
 }
 
-/* Banner Image container to show 100% of image without cropping text or cards */
-.coming-soon-banner-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto 24px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.coming-soon-banner-img {
-    width: 100%;
-    height: auto;
-    max-height: 440px;
-    object-fit: contain;
-    display: block;
-}
-
-.coming-soon-content {
+/* Hero Centered Content */
+.coming-soon-hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-}
-
-.coming-soon-title {
-    font-size: 2.2rem;
-    font-weight: 700;
+    z-index: 2;
     color: #ffffff;
-    margin-bottom: 8px;
-    line-height: 1.3;
 }
 
-.coming-soon-subtitle {
-    font-size: 1.2rem;
+.coming-soon-hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.25;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    letter-spacing: -0.5px;
+}
+
+.coming-soon-hero-subtitle {
+    font-size: 1.3rem;
     font-weight: 500;
-    color: #60a5fa;
-    margin-bottom: 24px;
-    letter-spacing: 3px;
+    color: #f3f4f6;
+    margin-bottom: 32px;
+    letter-spacing: 4px;
     text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.btn-download {
+/* Download Button */
+.btn-hero-download {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: #dc2626;
-    color: #fff;
+    background: #ffffff;
+    color: #111827;
     border: none;
-    padding: 12px 28px;
-    font-size: 0.98rem;
+    padding: 14px 32px;
+    font-size: 1rem;
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     text-decoration: none;
 }
 
-.btn-download:hover {
-    background: #b91c1c;
-    box-shadow: 0 10px 28px rgba(220, 38, 38, 0.5);
+.btn-hero-download:hover {
+    background: #f9fafb;
+    color: #000000;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
     transform: translateY(-3px);
-    color: #fff;
 }
 
 /* Animations */
@@ -124,7 +120,7 @@
 @keyframes csFadeIn {
     0% {
         opacity: 0;
-        transform: translateY(12px);
+        transform: translateY(10px);
     }
     100% {
         opacity: 1;
@@ -132,36 +128,66 @@
     }
 }
 
+/* ------------------------------
+   RESPONSIVE DESIGN
+-------------------------------- */
+@media (max-width: 1024px) {
+    .coming-soon-hero {
+        min-height: 440px;
+        height: 60vh;
+    }
+
+    .coming-soon-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .coming-soon-hero-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 3px;
+    }
+}
+
 @media (max-width: 768px) {
-    .coming-soon-banner-img {
-        max-height: 320px;
+    .coming-soon-hero {
+        min-height: 380px;
+        height: 50vh;
+        padding: 30px 16px;
     }
 
-    .coming-soon-title {
-        font-size: 1.75rem;
+    .btn-back-hero {
+        top: 16px;
+        left: 16px;
+        padding: 6px 14px;
+        font-size: 0.88rem;
     }
 
-    .coming-soon-subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
+    .coming-soon-hero-title {
+        font-size: 1.9rem;
+    }
+
+    .coming-soon-hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+    }
+
+    .btn-hero-download {
+        padding: 12px 24px;
+        font-size: 0.92rem;
     }
 }
 
 @media (max-width: 480px) {
-    .coming-soon-wrapper {
-        padding: 16px 12px 28px;
+    .coming-soon-hero {
+        min-height: 340px;
+        height: 45vh;
     }
 
-    .coming-soon-banner-img {
-        max-height: 240px;
+    .coming-soon-hero-title {
+        font-size: 1.5rem;
     }
 
-    .coming-soon-title {
-        font-size: 1.4rem;
-    }
-
-    .btn-download {
+    .btn-hero-download {
         padding: 10px 20px;
-        font-size: 0.9rem;
+        font-size: 0.88rem;
     }
 }
