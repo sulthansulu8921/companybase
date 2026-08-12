@@ -72,17 +72,13 @@ const Carousel = () => {
 
         {/* Big Main Image (Left) + Small Preview Image (Right) */}
         <div className="focus-carousel-stage">
-          {/* Featured Big Card */}
+          {/* Big Main Featured Card */}
           <div className="focus-card main-card">
             <img
               src={images[mainIndex].src}
               alt={images[mainIndex].title}
               className="focus-img"
             />
-            <div className="focus-card-overlay">
-              <span className="focus-badge">Featured</span>
-              <h3 className="focus-card-title">{images[mainIndex].title}</h3>
-            </div>
           </div>
 
           {/* Small Preview Next Card (Circulation Peek) */}
@@ -98,10 +94,6 @@ const Carousel = () => {
               alt={images[nextIndex].title}
               className="focus-img"
             />
-            <div className="preview-card-overlay">
-              <span className="preview-label">Next Up →</span>
-              <h4 className="preview-card-title">{images[nextIndex].title}</h4>
-            </div>
           </div>
         </div>
 
