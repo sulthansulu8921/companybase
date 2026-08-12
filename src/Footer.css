@@ -3,57 +3,85 @@
 -------------------------------- */
 .footer {
   background: #ffffff;
-  /* padding-top: 40px; */
-  color: rgb(0, 0, 0);
-  font-family: "Inter", sans-serif;
-  border-top: #000000 1px solid;
+  color: #1a1a1a;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-top: 1px solid #e5e7eb;
+  position: relative;
 }
 
-/* GRID LAYOUT — 3 COLUMNS */
+/* GRID LAYOUT — 4 COLUMNS FOR DESKTOP */
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
   max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-logo {
   width: 150px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   display: block;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 /* ------------------------------
    SECTION HEADINGS
 -------------------------------- */
 .footer-title {
-  font-size: 18px;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 12px;
+  color: #111827;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.footer-title::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #e11d48;
+  margin-top: 6px;
+  border-radius: 2px;
 }
 
 /* ------------------------------
    COMPANY TEXT + LINKS
 -------------------------------- */
 .footer-text {
-  font-size: 14px;
-  line-height: 22px;
-  opacity: 0.8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
-  list-style: none;
-  margin-bottom: 8px;
-  font-size: 14px;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  color: #4b5563;
   cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: block;
+  width: fit-content;
 }
 
 .footer-links li:hover {
-  color: #000000;
+  color: #e11d48;
+  transform: translateX(4px);
 }
 
 /* ------------------------------
@@ -62,6 +90,7 @@
 .footer-contact {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-contact li {
@@ -69,10 +98,28 @@
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 12px;
-  font-size: 14px;
+  font-size: 0.9rem;
+  color: #374151;
 }
 
-/* Address icon + aligned text */
+.footer-contact-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact-link:hover {
+  color: #e11d48;
+  text-decoration: underline;
+}
+
+.footer-line svg {
+  flex-shrink: 0;
+  color: #e11d48;
+  margin-top: 3px;
+}
+
+/* Address block */
 .address-block {
   display: flex;
   align-items: flex-start;
@@ -85,83 +132,140 @@
 .address-text {
   display: flex;
   flex-direction: column;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.address-text strong {
+  color: #111827;
+  margin-bottom: 4px;
 }
 
 /* ------------------------------
    SOCIAL ICONS
 -------------------------------- */
 .footer-socials {
-  margin-top: 15px;
   display: flex;
-  gap: 15px;
+  gap: 12px;
+  margin-top: 4px;
 }
 
 .footer-socials a {
-  color: rgb(14, 14, 14);
-  font-size: 18px;
-  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .footer-socials a:hover {
-  color: #020202;
+  background: #e11d48;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
 }
 
 /* ------------------------------
    COPYRIGHT BAR
 -------------------------------- */
 .footer-bottom {
-  border-top: 1px solid #3a3b3c;
+  border-top: 1px solid #f3f4f6;
+  background: #fafafa;
   text-align: center;
-  padding: 12px 0;
-  margin-top: 20px;
-  font-size: 13px;
-  opacity: 0.7;
+  padding: 16px 20px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.footer-bottom p {
+  margin: 0;
 }
 
 /* ------------------------------
-   MOBILE RESPONSIVE
+   FLOATING ACTION BUTTONS
 -------------------------------- */
-@media (max-width: 768px) {
+.floating-icon {
+  position: fixed;
+  bottom: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 9999;
+  text-decoration: none;
+}
+
+.floating-icon:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+}
+
+.left-icon {
+  left: 24px;
+}
+
+.right-icon {
+  right: 24px;
+}
+
+.icon-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+}
+
+.icon-whatsapp:hover {
+  background: #128C7E;
+}
+
+.call-icon {
+  background: #007BFF;
+  color: #ffffff;
+}
+
+.call-icon:hover {
+  background: #0056b3;
+}
+
+/* ------------------------------
+   RESPONSIVE LAYOUTS
+-------------------------------- */
+@media (max-width: 1024px) {
   .footer-container {
-    grid-template-columns: 1fr;
-    text-align: left;
-    gap: 24px;
-    padding: 30px 20px;
-  }
-
-  .footer-contact li {
-    align-items: flex-start;
-  }
-
-  .footer-socials {
-    margin-top: 10px;
-  }
-
-  .footer-title {
-    font-size: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .footer-container {
-    padding: 24px 16px;
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 36px 20px 24px;
   }
 
-  .footer-logo {
-    width: 120px;
+  .floating-icon {
+    bottom: 18px;
+    width: 46px;
+    height: 46px;
   }
 
-  .footer-text,
-  .footer-links li,
-  .footer-contact li {
-    font-size: 13px;
+  .left-icon {
+    left: 16px;
   }
 
-  .footer-bottom {
-    font-size: 12px;
-    padding: 10px 16px;
+  .right-icon {
+    right: 16px;
   }
 }

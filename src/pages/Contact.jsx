@@ -51,13 +51,21 @@ Message: ${formData.message}`;
           <div className="contact-card">
             <Mail className="contact-icon" />
             <h3>Email</h3>
-            <p>Connect.ktn@gmail.com</p>
+            <p>
+              <a href="mailto:Connect.ktn@gmail.com" className="contact-link">
+                Connect.ktn@gmail.com
+              </a>
+            </p>
           </div>
 
           <div className="contact-card">
             <Phone className="contact-icon" />
             <h3>Phone</h3>
-            <p>+91 9946229098,+91 9895029756</p>
+            <p>
+              <a href="tel:+919946229098" className="contact-link">+91 99462 29098</a>
+              <br />
+              <a href="tel:+919895029756" className="contact-link">+91 98950 29756</a>
+            </p>
           </div>
 
           <div className="contact-card">

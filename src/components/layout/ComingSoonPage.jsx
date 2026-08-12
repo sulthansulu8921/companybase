@@ -5,17 +5,12 @@ import './ComingSoonPage.css';
 
 const ComingSoonPage = ({ title, setCurrentPage, bgImage, pdfFile, pdfName }) => {
     return (
-        <div
-            className="coming-soon-container fade-in"
-            style={{ backgroundImage: bgImage ? `url(${bgImage})` : 'none' }}
-        >
-            <div className="coming-soon-overlay"></div>
-
+        <div className="coming-soon-wrapper fade-in">
             {/* Header section with back button */}
             <header className="coming-soon-header">
                 <button
                     className="btn-back-minimal"
-                    onClick={() => setCurrentPage("home")}
+                    onClick={() => setCurrentPage ? setCurrentPage("home") : window.history.back()}
                     aria-label="Back to Home"
                 >
                     <ArrowLeft size={18} className="icon" />
@@ -23,7 +18,14 @@ const ComingSoonPage = ({ title, setCurrentPage, bgImage, pdfFile, pdfName }) =>
                 </button>
             </header>
 
-            {/* Main content centered perfectly */}
+            {/* Image display section - uncropped */}
+            {bgImage && (
+                <div className="coming-soon-banner-container">
+                    <img src={bgImage} alt={title} className="coming-soon-banner-img" />
+                </div>
+            )}
+
+            {/* Main content centered */}
             <main className="coming-soon-content">
                 <h1 className="coming-soon-title">{title}</h1>
                 <h2 className="coming-soon-subtitle">COMING SOON...</h2>
@@ -43,3 +45,4 @@ const ComingSoonPage = ({ title, setCurrentPage, bgImage, pdfFile, pdfName }) =>
 };
 
 export default ComingSoonPage;
+
