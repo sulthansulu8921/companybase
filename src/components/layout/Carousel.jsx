@@ -51,39 +51,55 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, [isHovered]);
 
+  const prevIndex = (currentIndex - 1 + images.length) % images.length;
   const mainIndex = currentIndex;
   const nextIndex = (currentIndex + 1) % images.length;
 
   return (
     <div
-      className="focus-carousel-wrapper"
+      className="circular-carousel-wrapper"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="focus-carousel-container">
+      <div className="circular-carousel-container">
         {/* Previous Button */}
         <button
-          className="focus-btn prev-btn"
+          className="circular-btn prev-btn"
           onClick={prevSlide}
           aria-label="Previous Slide"
         >
           <ChevronLeft size={36} strokeWidth={2.5} />
         </button>
 
-        {/* Big Main Image (Left) + Small Preview Image (Right) */}
-        <div className="focus-carousel-stage">
-          {/* Big Main Featured Card */}
-          <div className="focus-card main-card">
+        {/* 3-Card Stage: Left Small (Prev) | Center Big (Main) | Right Small (Next) */}
+        <div className="circular-carousel-stage">
+          {/* Left Small Card (Previous Image) */}
+          <div
+            className="circular-card side-card prev-card-side"
+            onClick={prevSlide}
+            role="button"
+            tabIndex={0}
+            aria-label="View Previous Slide"
+          >
             <img
-              src={images[mainIndex].src}
-              alt={images[mainIndex].title}
-              className="focus-img"
+              src={images[prevIndex].src}
+              alt={images[prevIndex].title}
+              className="circular-img"
             />
           </div>
 
-          {/* Small Preview Next Card (Circulation Peek) */}
+          {/* Center Big Card (Main Active Reading Image) */}
+          <div className="circular-card main-card-center">
+            <img
+              src={images[mainIndex].src}
+              alt={images[mainIndex].title}
+              className="circular-img"
+            />
+          </div>
+
+          {/* Right Small Card (Upcoming Next Image) */}
           <div
-            className="focus-card preview-card"
+            className="circular-card side-card next-card-side"
             onClick={nextSlide}
             role="button"
             tabIndex={0}
@@ -92,14 +108,14 @@ const Carousel = () => {
             <img
               src={images[nextIndex].src}
               alt={images[nextIndex].title}
-              className="focus-img"
+              className="circular-img"
             />
           </div>
         </div>
 
         {/* Next Button */}
         <button
-          className="focus-btn next-btn"
+          className="circular-btn next-btn"
           onClick={nextSlide}
           aria-label="Next Slide"
         >

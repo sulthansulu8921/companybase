@@ -1,15 +1,15 @@
 /* ------------------------------
-   FOCUS & CIRCULATION CAROUSEL
+   3-CARD CIRCULAR CAROUSEL
 -------------------------------- */
-.focus-carousel-wrapper {
+.circular-carousel-wrapper {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 16px 20px 24px;
   box-sizing: border-box;
 }
 
-.focus-carousel-container {
+.circular-carousel-container {
   position: relative;
   display: flex;
   align-items: center;
@@ -17,61 +17,61 @@
   width: 100%;
 }
 
-.focus-carousel-stage {
+.circular-carousel-stage {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 16px;
   width: 100%;
 }
 
-/* BIG MAIN FEATURED CARD (~68% width) */
-.main-card {
-  flex: 0 0 68%;
-  height: 460px;
-  border-radius: 20px;
+/* Base Card Style */
+.circular-card {
   overflow: hidden;
   position: relative;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-  border: 1px solid #e2e8f0;
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 18px;
+  box-sizing: border-box;
   background-color: #050811;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.main-card:hover {
+/* CENTER BIG FEATURED CARD (Active Reading Focus ~54% width) */
+.main-card-center {
+  flex: 0 0 54%;
+  height: 440px;
+  z-index: 5;
+  border: 1px solid #cbd5e1;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
 }
 
-/* SMALL PREVIEW NEXT CARD (~30% width, scaled down & clickable) */
-.preview-card {
-  flex: 0 0 30%;
-  height: 330px;
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  border: 1px solid #cbd5e1;
-  cursor: pointer;
-  opacity: 0.88;
-  transform: scale(0.96);
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  background-color: #050811;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.main-card-center:hover {
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
 }
 
-.preview-card:hover {
+/* SIDE SMALL CARDS (Left Prev & Right Next ~22% width each) */
+.side-card {
+  flex: 0 0 22%;
+  height: 310px;
+  opacity: 0.72;
+  cursor: pointer;
+  transform: scale(0.92);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.side-card:hover {
   opacity: 1;
-  transform: scale(1.0);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  transform: scale(0.98);
   border-color: #dc2626;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
 }
 
 /* Image styles (Show 100% full image content without cropping) */
-.focus-img {
+.circular-img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -79,71 +79,8 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-/* Overlays & Badges */
-.focus-card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 24px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-}
-
-.focus-badge {
-  background: #dc2626;
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 4px 10px;
-  border-radius: 20px;
-}
-
-.focus-card-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.preview-card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 16px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
-  color: #ffffff;
-}
-
-.preview-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: #60a5fa;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 4px;
-}
-
-.preview-card-title {
-  font-size: 0.92rem;
-  font-weight: 600;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-}
-
-/* Navigation Buttons (Clean arrows without white circle) */
-.focus-btn {
+/* Navigation Arrows */
+.circular-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -160,17 +97,17 @@
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
 }
 
-.focus-btn:hover {
+.circular-btn:hover {
   color: #dc2626;
   transform: translateY(-50%) scale(1.2);
 }
 
 .prev-btn {
-  left: -24px;
+  left: -20px;
 }
 
 .next-btn {
-  right: -24px;
+  right: -20px;
 }
 
 /* Navigation Dots */
@@ -178,7 +115,7 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 18px;
 }
 
 .dot {
@@ -198,92 +135,54 @@
 }
 
 /* ------------------------------
-   COMPREHENSIVE RESPONSIVE DESIGN
+   RESPONSIVE DESIGN
 -------------------------------- */
-/* Standard Laptops (1200px - 1400px) */
-@media (max-width: 1366px) {
-  .main-card {
-    height: 400px;
+@media (max-width: 1200px) {
+  .main-card-center {
+    height: 380px;
+    flex: 0 0 54%;
   }
-  .preview-card {
-    height: 330px;
+
+  .side-card {
+    height: 270px;
+    flex: 0 0 22%;
   }
 }
 
-/* Small Laptops & Notebooks (992px - 1199px) */
-@media (max-width: 1199px) {
-  .main-card {
-    height: 350px;
-  }
-  .preview-card {
-    height: 290px;
-  }
-  .focus-card-title {
-    font-size: 1.1rem;
-  }
-}
-
-/* Tablets & iPads (768px - 991px) */
 @media (max-width: 991px) {
-  .main-card {
-    height: 300px;
-    flex: 0 0 65%;
+  .main-card-center {
+    height: 320px;
+    flex: 0 0 58%;
   }
-  .preview-card {
-    height: 250px;
-    flex: 0 0 32%;
+
+  .side-card {
+    height: 230px;
+    flex: 0 0 20%;
   }
 }
 
-/* Mobile & Small Tablets (< 768px) */
 @media (max-width: 767px) {
-  .focus-carousel-stage {
-    flex-direction: column;
-  }
-
-  .main-card {
-    flex: 0 0 100%;
-    width: 100%;
-    height: 250px;
-    border-radius: 14px;
-  }
-
-  .preview-card {
+  .side-card {
     display: none;
   }
 
-  .focus-card-overlay {
-    padding: 16px;
-  }
-
-  .focus-card-title {
-    font-size: 1rem;
+  .main-card-center {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 250px;
   }
 
   .prev-btn {
-    left: 4px;
-    width: 36px;
-    height: 36px;
+    left: 2px;
   }
 
   .next-btn {
-    right: 4px;
-    width: 36px;
-    height: 36px;
+    right: 2px;
   }
 }
 
-/* Small Screen Phones (< 480px) */
 @media (max-width: 480px) {
-  .focus-carousel-wrapper {
-    padding: 10px 12px 16px;
-  }
-
-  .main-card {
+  .main-card-center {
     height: 210px;
-  }
-
-  .focus-card-title {
-    font-size: 0.9rem;
   }
 }
