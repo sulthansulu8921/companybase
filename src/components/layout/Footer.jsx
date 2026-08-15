@@ -1,7 +1,7 @@
 import React from "react";
 import "../../Footer.css";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 const Footer = ({ setCurrentPage }) => {
   const handleNav = (page) => {
@@ -75,16 +75,13 @@ const Footer = ({ setCurrentPage }) => {
         <div className="footer-section">
           <h4 className="footer-title">Follow Us</h4>
           <div className="footer-socials">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61574164016612" target="_blank" rel="noreferrer" aria-label="Facebook">
               <FaFacebook />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/vibes-solutions-b898481b2" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <FaLinkedin />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/connectvibes.in/" target="_blank" rel="noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>
           </div>
