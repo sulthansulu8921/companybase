@@ -12,6 +12,7 @@ const projects = [
 const Navbar = ({ currentPage, setCurrentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -23,7 +24,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      if (window.innerWidth > 768 && dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsDropdownOpen(false);
       }
     };
@@ -31,15 +32,35 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   const handleNavClick = (page) => {
-    setCurrentPage(page);
+    if (setCurrentPage) {
+      setCurrentPage(page);
+    }
     setIsMenuOpen(false);
     setIsDropdownOpen(false);
+    setIsMobileProjectsOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const toggleDropdown = (e) => {
     e.stopPropagation();
     setIsDropdownOpen((prev) => !prev);
+  };
+
+  const toggleMobileProjects = (e) => {
+    e.stopPropagation();
+    setIsMobileProjectsOpen((prev) => !prev);
   };
 
   const getLogo = () => {
@@ -115,11 +136,11 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
           <li onClick={() => handleNavClick("about")} className={currentPage === "about" ? "active" : ""}>About</li>
 
           {/* Mobile Projects Accordion */}
-          <li className={`mobile-dropdown${isDropdownOpen ? " open" : ""}`}>
-            <div className="mobile-dropdown-header" onClick={toggleDropdown}>
+          <li className={`mobile-dropdown${isMobileProjectsOpen ? " open" : ""}`}>
+            <div className="mobile-dropdown-header" onClick={toggleMobileProjects}>
               Projects <span className="mobile-arrow">&#8964;</span>
             </div>
-            {isDropdownOpen && (
+            {isMobileProjectsOpen && (
               <ul className="mobile-dropdown-list">
                 {projects.map((p) => (
                   <li key={p.page} onClick={() => handleNavClick(p.page)} className={currentPage === p.page ? "active-sub" : ""}>

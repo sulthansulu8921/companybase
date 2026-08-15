@@ -7,30 +7,35 @@ const images = [
     src: process.env.PUBLIC_URL + "/carusal-img-3.png",
     title: "Connect Integrated Services",
     subtitle: "Complete Telecom & Network Infrastructure Solutions",
+    page: "telecom",
   },
   {
     src: process.env.PUBLIC_URL + "/carusal-img-4.png",
     title: "Digital Connectivity & AI Network",
     subtitle: "High-Speed Global Optical & Wireless Connectivity",
+    page: "telecom",
   },
   {
     src: process.env.PUBLIC_URL + "/carusal-img-1.jpeg",
     title: "Enterprise Technology Team",
     subtitle: "Professional Engineering & Infrastructure Services",
+    page: "engineering",
   },
   {
     src: process.env.PUBLIC_URL + "/carusal-img-2.png",
     title: "Global Broadband Delivery",
     subtitle: "Dark Fiber & High-Bandwidth Solutions",
+    page: "telecom",
   },
   {
     src: process.env.PUBLIC_URL + "/carusal-img-5.jpeg",
     title: "Corporate Management & AMC",
     subtitle: "Reliable & Trusted Business Solutions",
+    page: "business",
   },
 ];
 
-const Carousel = () => {
+const Carousel = ({ setCurrentPage }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -54,6 +59,12 @@ const Carousel = () => {
   const prevIndex = (currentIndex - 1 + images.length) % images.length;
   const mainIndex = currentIndex;
   const nextIndex = (currentIndex + 1) % images.length;
+
+  const handleCardClick = (page) => {
+    if (setCurrentPage && page) {
+      setCurrentPage(page);
+    }
+  };
 
   return (
     <div
@@ -89,7 +100,13 @@ const Carousel = () => {
           </div>
 
           {/* Center Big Card (Main Active Reading Image) */}
-          <div className="circular-card main-card-center">
+          <div
+            className="circular-card main-card-center"
+            onClick={() => handleCardClick(images[mainIndex].page)}
+            role="button"
+            tabIndex={0}
+            style={{ cursor: setCurrentPage ? "pointer" : "default" }}
+          >
             <img
               src={images[mainIndex].src}
               alt={images[mainIndex].title}

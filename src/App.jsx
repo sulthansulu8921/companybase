@@ -70,7 +70,7 @@
 
 
 // src/App.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
@@ -91,10 +91,14 @@ import "./index.css";
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
       case "home":
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;
 
       case "production-services":
         return <ProductServices setCurrentPage={setCurrentPage} />;
@@ -124,7 +128,7 @@ const App = () => {
         return <Reviews />;
 
       default:
-        return <Home />;
+        return <Home setCurrentPage={setCurrentPage} />;
     }
   };
 
@@ -133,7 +137,6 @@ const App = () => {
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="main-content">{renderPage()}</main>
       <Footer setCurrentPage={setCurrentPage} />
-      
     </div>
   );
 };
