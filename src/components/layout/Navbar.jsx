@@ -3,7 +3,7 @@ import "./Navbar.css";
 
 const projects = [
   { label: "Connect Integrated Telecom Services", page: "telecom" },
-  { label: "Vibes Business Solution", page: "business" },
+  { label: "NanoRays Solutions", page: "business" },
   { label: "Connect Engineering and Infrastructure", page: "engineering" },
   { label: "Suraksha Doors and Windows", page: "suraksha" },
   { label: "Connect Home Renovations", page: "renovations" },
@@ -24,7 +24,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (window.innerWidth > 768 && dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setIsDropdownOpen(false);
       }
     };
@@ -43,7 +43,10 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
     };
   }, [isMenuOpen]);
 
-  const handleNavClick = (page) => {
+  const handleNavClick = (e, page) => {
+    if (e && e.stopPropagation) {
+      e.stopPropagation();
+    }
     if (setCurrentPage) {
       setCurrentPage(page);
     }
@@ -54,19 +57,23 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
   };
 
   const toggleDropdown = (e) => {
-    e.stopPropagation();
+    if (e && e.stopPropagation) {
+      e.stopPropagation();
+    }
     setIsDropdownOpen((prev) => !prev);
   };
 
   const toggleMobileProjects = (e) => {
-    e.stopPropagation();
+    if (e && e.stopPropagation) {
+      e.stopPropagation();
+    }
     setIsMobileProjectsOpen((prev) => !prev);
   };
 
   const getLogo = () => {
     switch ((currentPage || "").toLowerCase()) {
       case "telecom": return process.env.PUBLIC_URL + "/telecom.jpeg";
-      case "business": return process.env.PUBLIC_URL + "/vibes.jpeg";
+      case "business": return process.env.PUBLIC_URL + "/nanorays.png";
       case "engineering": return process.env.PUBLIC_URL + "/engineer.jpeg";
       case "suraksha": return process.env.PUBLIC_URL + "/groups.jpeg";
       case "renovations": return process.env.PUBLIC_URL + "/home.jpeg";
@@ -79,31 +86,47 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       <div className="navbar-container">
 
         {/* Logo — extreme left */}
-        <div className="navbar-logo" onClick={() => handleNavClick("home")} role="button" aria-label="Go to home">
-          <img src={getLogo()} alt="Connect Group Logo" className="logo-img" />
+        <div className="navbar-logo" onClick={(e) => handleNavClick(e, "home")} role="button" aria-label="Go to home">
+          <img src={getLogo()} alt="Logo" className="logo-img" />
         </div>
 
-        {/* Desktop Navigation — extreme right */}
+        {/* Desktop Navigation */}
         <nav className="nav-menu" aria-label="Main navigation">
           <ul className="navbar-links">
-            <li className={currentPage === "home" ? "active" : ""} onClick={() => handleNavClick("home")}>Home</li>
-            <li className={currentPage === "about" ? "active" : ""} onClick={() => handleNavClick("about")}>About</li>
+            <li className={currentPage === "home" ? "active" : ""} onClick={(e) => handleNavClick(e, "home")}>Home</li>
+            <li className={currentPage === "about" ? "active" : ""} onClick={(e) => handleNavClick(e, "about")}>About</li>
 
             {/* Projects with dropdown */}
             <li
-              className={`dropdown-parent${isDropdownOpen ? " mobile-open" : ""}${projects.some(p => p.page === currentPage) ? " active" : ""}`}
+              className={`dropdown-parent${isDropdownOpen ? " mobile-open" : ""}${projects.some(p => p.page === currentPage) || currentPage === "production-services" ? " active" : ""}`}
               ref={dropdownRef}
-              onClick={toggleDropdown}
               onMouseEnter={() => window.innerWidth > 768 && setIsDropdownOpen(true)}
               onMouseLeave={() => window.innerWidth > 768 && setIsDropdownOpen(false)}
             >
-              <span className="dropdown-toggle">Projects</span>
-              <ul className={`dropdown-menu${isDropdownOpen ? " show" : ""}`} onClick={(e) => e.stopPropagation()}>
+              <span
+                className="dropdown-toggle"
+                onClick={(e) => {
+                  if (window.innerWidth <= 768) {
+                    toggleDropdown(e);
+                  } else {
+                    handleNavClick(e, "production-services");
+                  }
+                }}
+              >
+                Projects
+              </span>
+              <ul className={`dropdown-menu${isDropdownOpen ? " show" : ""}`}>
+                <li
+                  className={currentPage === "production-services" ? "active-sub" : ""}
+                  onClick={(e) => handleNavClick(e, "production-services")}
+                >
+                  All Projects Overview
+                </li>
                 {projects.map((p) => (
                   <li
                     key={p.page}
                     className={currentPage === p.page ? "active-sub" : ""}
-                    onClick={() => handleNavClick(p.page)}
+                    onClick={(e) => handleNavClick(e, p.page)}
                   >
                     {p.label}
                   </li>
@@ -111,15 +134,18 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
               </ul>
             </li>
 
-            <li className={currentPage === "reviews" ? "active" : ""} onClick={() => handleNavClick("reviews")}>Reviews</li>
-            <li className={`nav-contact-btn${currentPage === "contact" ? " active" : ""}`} onClick={() => handleNavClick("contact")}>Contact</li>
+            <li className={currentPage === "reviews" ? "active" : ""} onClick={(e) => handleNavClick(e, "reviews")}>Reviews</li>
+            <li className={`nav-contact-btn${currentPage === "contact" ? " active" : ""}`} onClick={(e) => handleNavClick(e, "contact")}>Contact</li>
           </ul>
         </nav>
 
         {/* Hamburger — mobile only */}
         <button
           className={`menu-toggle${isMenuOpen ? " open" : ""}`}
-          onClick={() => setIsMenuOpen((prev) => !prev)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsMenuOpen((prev) => !prev);
+          }}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
         >
@@ -132,8 +158,8 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
       {/* Mobile Drawer */}
       <div className={`mobile-drawer${isMenuOpen ? " open" : ""}`} aria-hidden={!isMenuOpen}>
         <ul className="mobile-links">
-          <li onClick={() => handleNavClick("home")} className={currentPage === "home" ? "active" : ""}>Home</li>
-          <li onClick={() => handleNavClick("about")} className={currentPage === "about" ? "active" : ""}>About</li>
+          <li onClick={(e) => handleNavClick(e, "home")} className={currentPage === "home" ? "active" : ""}>Home</li>
+          <li onClick={(e) => handleNavClick(e, "about")} className={currentPage === "about" ? "active" : ""}>About</li>
 
           {/* Mobile Projects Accordion */}
           <li className={`mobile-dropdown${isMobileProjectsOpen ? " open" : ""}`}>
@@ -142,8 +168,18 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             </div>
             {isMobileProjectsOpen && (
               <ul className="mobile-dropdown-list">
+                <li
+                  onClick={(e) => handleNavClick(e, "production-services")}
+                  className={currentPage === "production-services" ? "active-sub" : ""}
+                >
+                  All Projects Overview
+                </li>
                 {projects.map((p) => (
-                  <li key={p.page} onClick={() => handleNavClick(p.page)} className={currentPage === p.page ? "active-sub" : ""}>
+                  <li
+                    key={p.page}
+                    onClick={(e) => handleNavClick(e, p.page)}
+                    className={currentPage === p.page ? "active-sub" : ""}
+                  >
                     {p.label}
                   </li>
                 ))}
@@ -151,8 +187,8 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             )}
           </li>
 
-          <li onClick={() => handleNavClick("reviews")} className={currentPage === "reviews" ? "active" : ""}>Reviews</li>
-          <li onClick={() => handleNavClick("contact")} className={`contact-mobile${currentPage === "contact" ? " active" : ""}`}>Contact</li>
+          <li onClick={(e) => handleNavClick(e, "reviews")} className={currentPage === "reviews" ? "active" : ""}>Reviews</li>
+          <li onClick={(e) => handleNavClick(e, "contact")} className={`contact-mobile${currentPage === "contact" ? " active" : ""}`}>Contact</li>
         </ul>
       </div>
     </header>

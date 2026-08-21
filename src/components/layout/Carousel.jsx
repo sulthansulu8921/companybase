@@ -16,22 +16,16 @@ const images = [
     page: "telecom",
   },
   {
-    src: process.env.PUBLIC_URL + "/carusal-img-1.jpeg",
-    title: "Enterprise Technology Team",
-    subtitle: "Professional Engineering & Infrastructure Services",
-    page: "engineering",
+    src: process.env.PUBLIC_URL + "/nanorays-banner.jpeg",
+    title: "NanoRays Solutions",
+    subtitle: "Digital Solutions, AI, Software & Automation",
+    page: "business",
   },
   {
     src: process.env.PUBLIC_URL + "/carusal-img-2.png",
     title: "Global Broadband Delivery",
     subtitle: "Dark Fiber & High-Bandwidth Solutions",
     page: "telecom",
-  },
-  {
-    src: process.env.PUBLIC_URL + "/carusal-img-5.jpeg",
-    title: "Corporate Management & AMC",
-    subtitle: "Reliable & Trusted Business Solutions",
-    page: "business",
   },
 ];
 
@@ -50,8 +44,8 @@ const Carousel = ({ setCurrentPage }) => {
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [isHovered]);

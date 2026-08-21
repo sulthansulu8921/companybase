@@ -62,6 +62,7 @@ Message: ${formData.message}`;
             <Phone className="contact-icon" />
             <h3>Phone</h3>
             <p>
+              <br />
               <a href="tel:+919946229098" className="contact-link">+91 99462 29098</a>
               <br />
               <a href="tel:+919895029756" className="contact-link">+91 98950 29756</a>

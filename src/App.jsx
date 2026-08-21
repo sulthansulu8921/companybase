@@ -136,7 +136,7 @@ const App = () => {
     <div className="app-container">
       <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="main-content">{renderPage()}</main>
-      <Footer setCurrentPage={setCurrentPage} />
+      <Footer setCurrentPage={setCurrentPage} currentPage={currentPage} />
     </div>
   );
 };

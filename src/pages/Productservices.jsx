@@ -21,8 +21,8 @@ const ProductServices = ({ setCurrentPage }) => {
       page: "telecom",
     },
     {
-      title: "Vibes Business solution",
-      desc: "Comprehensive business growth strategies.",
+      title: "NanoRays Solutions",
+      desc: "Digital Solutions, AI, Software & Automation.",
       icon: <FaBriefcase />,
       page: "business",
     },

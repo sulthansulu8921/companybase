@@ -1,6 +1,6 @@
 .connect-container {
-  background: linear-gradient(to bottom, #fffdfd, #ffff, #d4a6a6);
-  color: rgb(0, 0, 0);
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+  color: #0f172a;
   min-height: 100vh;
   padding: 80px 20px;
   display: flex;
@@ -17,19 +17,20 @@
 }
 
 .connect-card {
-  background: #75d4dd;
+  background: #ffffff;
   border-radius: 20px;
-  padding: 30px;
+  padding: 32px 24px;
   text-align: center;
-  border: 1px solid #2a2a2a;
-  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .connect-card:hover {
   transform: translateY(-8px);
-  border-color: rgb(212, 212, 212);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  border-color: #0284c7;
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.15);
 }
 
 .company-logo {
@@ -44,20 +45,22 @@
 }
 
 .icon-wrapper {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 15px;
-  color: white;
+  color: #0284c7;
 }
 
 .connect-card h2 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 700;
+  color: #0f172a;
   margin-bottom: 10px;
 }
 
 .connect-card p {
-  font-size: 0.9rem;
-  color: #040303;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
 }
 
 /* Floating icons */
@@ -114,21 +117,21 @@
   }
 
   .connect-card {
-    padding: 22px 18px;
+    padding: 24px 20px;
   }
 
   .connect-card h2 {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 }
 
 @media (max-width: 480px) {
   .connect-card h2 {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .company-logo {
-    width: 110px;
+    width: 120px;
   }
 
   .floating-icon {
